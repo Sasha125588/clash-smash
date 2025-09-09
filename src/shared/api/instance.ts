@@ -1,0 +1,11 @@
+import axios from "axios";
+
+export const api = axios.create({
+  baseURL: "/api/",
+  headers: {
+    "Content-Type": "application/json",
+  },
+});
+
+api.defaults.headers.common["Authorization"] =
+  "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiIsImtpZCI6IjI4YTMxOGY3LTAwMDAtYTFlYi03ZmExLTJjNzQzM2M2Y2NhNSJ9.eyJpc3MiOiJzdXBlcmNlbGwiLCJhdWQiOiJzdXBlcmNlbGw6Z2FtZWFwaSIsImp0aSI6ImM1MzVhMzY0LWZiY2MtNGQ1Yi1hNWY3LTFjNjZiODQ0YTY5MyIsImlhdCI6MTc1NzQ0MTQ3NCwic3ViIjoiZGV2ZWxvcGVyL2I5MjliZWI2LTNmMDItYWZlOS0xNGI5LTU1NzRlM2E2MzFhMyIsInNjb3BlcyI6WyJyb3lhbGUiXSwibGltaXRzIjpbeyJ0aWVyIjoiZGV2ZWxvcGVyL3NpbHZlciIsInR5cGUiOiJ0aHJvdHRsaW5nIn0seyJjaWRycyI6WyIxOTMuMTA2LjE0NS40NyJdLCJ0eXBlIjoiY2xpZW50In1dfQ.994yUT5aF0n5sDhuUrdwBGI_mno8FO7H_eMWh56bRYXubQ5hlGsf-E2tTerjBPQ5JSrVVrTw0qC5F1dy7o_93Q";

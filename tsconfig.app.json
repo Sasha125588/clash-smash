@@ -9,7 +9,8 @@
 
     "baseUrl": ".",
     "paths": {
-      "@/*": ["./src/*"]
+      "@/*": ["./src/*"],
+      "@/generated/*": ["./generated/*"]
     },
 
     /* Bundler mode */

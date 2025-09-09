@@ -1,9 +1,9 @@
 import { createFileRoute, Outlet } from "@tanstack/react-router";
 
-import { BottomMenu, Header } from "./-component";
+import { BottomMenu, Header } from "./-components";
 
 const RootLayout = () => (
-  <div className="container max-w-[1000px] m-auto px-4 overflow-hidden mb-24">
+  <div className="container max-w-[1000px] m-auto px-4 overflow-hidden h-screen">
     <div className="flex flex-col h-full">
       <div className="container hidden lg:block">
         <Header />
