@@ -1,3 +1,4 @@
+import type { AxiosRequestConfig } from "axios";
 import { api } from "../../instance";
 
 export type Rarity = "common" | "rare" | "epic" | "legendary" | "champion";
@@ -22,5 +23,5 @@ export interface CardsResponse {
   supportItems: Hero[];
 }
 
-export const getCards = async () =>
-  (await api.get<CardsResponse>("cards")).data;
+export const getCards = async (requestConfig: AxiosRequestConfig) =>
+  await api.get<CardsResponse>("cards", requestConfig);

@@ -60,8 +60,8 @@ const HeroCardImage = React.forwardRef<
   HTMLImageElement,
   React.ComponentProps<"img">
 >(({ className, ...props }, ref) => {
-  const pokemonContext = React.useContext(HeroCardContext);
-  const src = pokemonContext.hero?.iconUrls.medium ?? props.src;
+  const heroContext = React.useContext(HeroCardContext);
+  const src = heroContext.hero?.iconUrls.medium ?? props.src;
 
   if (!src) return null;
 

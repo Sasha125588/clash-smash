@@ -46,10 +46,10 @@ export const Header = () => (
                       to="/"
                     >
                       <div className="text-sm font-medium leading-none">
-                        Choose your poke
+                        Choose your hero
                       </div>
                       <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
-                        Choose your favorite pokemon
+                        Choose your favorite hero
                       </p>
                     </Link>
                   </NavigationMenuLink>
@@ -64,7 +64,7 @@ export const Header = () => (
                         Statistic
                       </div>
                       <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
-                        Statistic of all pokemon matches
+                        Statistic of all heroes matches
                       </p>
                     </Link>
                   </NavigationMenuLink>
@@ -87,7 +87,7 @@ export const Header = () => (
                         Arena
                       </div>
                       <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
-                        Choose your favorite pokemons and fight
+                        Choose your favorite heroes and fight
                       </p>
                     </Link>
                   </NavigationMenuLink>
@@ -100,10 +100,10 @@ export const Header = () => (
                       className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
                     >
                       <div className="text-sm font-medium leading-none">
-                        Pokemons
+                        Heroes
                       </div>
                       <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
-                        Pokedex of pokemons with statistics
+                        Pokedex of heroes with statistics
                       </p>
                     </Link>
                   </NavigationMenuLink>
