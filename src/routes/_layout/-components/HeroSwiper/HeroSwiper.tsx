@@ -9,6 +9,7 @@ import {
   HeroCardDescription,
   HeroCardImage,
   HeroCardTitle,
+  HeroCardType,
 } from "@/components/ui";
 import { useHeroSwiper } from "./hooks/useHeroSwiper";
 
@@ -52,16 +53,6 @@ export const HeroSwiper = () => {
             opacity: state.card.opacity,
           }}
         >
-          {/* {!state.hero && (
-            <HeroCard className='h-[450px]'>
-              <HeroCardImageSkeleton />
-              <HeroCardContent className='text-left'>
-                <HeroCardTitleSkeleton />
-                <HeroCardTypesSkeleton />
-                <HeroCardDescriptionSkeleton />
-              </HeroCardContent>
-            </HeroCard>
-          )} */}
           {state.hero && (
             <HeroCard
               className="h-[450px]"
@@ -72,9 +63,8 @@ export const HeroSwiper = () => {
               <HeroCardImage loading="lazy" />
               <HeroCardContent className="text-left">
                 <HeroCardTitle className="text-5xl" />
-                <HeroCardDescription>
-                  {state.hero[state.currentIndex].rarity}
-                </HeroCardDescription>
+                <HeroCardDescription />
+                <HeroCardType />
               </HeroCardContent>
             </HeroCard>
           )}
@@ -95,7 +85,7 @@ export const HeroSwiper = () => {
         </motion.div>
       </motion.div>
 
-      <div className="flex gap-2">
+      <div className="flex items-center mx-auto justify-center gap-2">
         <Button
           className="w-full hover:bg-red-100"
           //   disabled={state.pending.action || state.loading.hero}

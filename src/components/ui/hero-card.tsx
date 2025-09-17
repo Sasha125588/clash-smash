@@ -47,7 +47,7 @@ const HeroCardBackground = React.forwardRef<
   <div
     ref={ref}
     className={cn(
-      "absolute top-0 left-0 bg-cover w-full h-full rounded-lg select-none",
+      "absolute top-0 left-0 bg-cover w-full h-full rounded-lg select-none!",
       className
     )}
     style={{ backgroundImage: `url(/images/clash-smash-bg.webp)` }}
@@ -120,14 +120,14 @@ const HeroCardDescription = React.forwardRef<
 >(({ className, ...props }, ref) => (
   <CardDescription
     ref={ref}
-    className={cn("text-white text-xs font-light", className)}
+    className={cn("text-white text-xs font-normal", className)}
     {...props}
   />
 ));
 HeroCardDescription.displayName = "HeroCardDescription";
 
 const heroTypesVariants = cva<{ type: Record<string, string> }>(
-  "rounded-lg text-[10px] py-1 px-2 text-center text-white capitalize font-bold",
+  "rounded-lg text-sm py-1 text-center text-white capitalize font-bold",
   {
     defaultVariants: {
       type: "common",
@@ -147,15 +147,20 @@ const heroTypesVariants = cva<{ type: Record<string, string> }>(
 const HeroCardType = React.forwardRef<
   HTMLDivElement,
   React.ComponentProps<"div">
->(({ children, className, ...props }, ref) => (
-  <div
-    ref={ref}
-    className={cn(heroTypesVariants({ className, type: children as string }))}
-    {...props}
-  >
-    {children}
-  </div>
-));
+>(({ className, ...props }, ref) => {
+  const heroContext = React.useContext(HeroCardContext);
+  const rarity = heroContext.hero?.rarity;
+
+  return (
+    <div
+      ref={ref}
+      className={cn(heroTypesVariants({ className, type: rarity }))}
+      {...props}
+    >
+      {rarity}
+    </div>
+  );
+});
 HeroCardType.displayName = "HeroCardType";
 
 export {
